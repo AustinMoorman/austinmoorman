@@ -1,0 +1,87 @@
+.App {
+    width: 100%;
+}
+.head {
+    display: flex;
+    height: 4rem;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+    background-color: rgba(50, 50, 50, 0.5)
+}
+.head h1 {
+    margin: auto 0 auto 3rem;
+}
+.nav {
+    margin: auto 3rem auto 0;
+}
+.navA {
+    margin-right: 0.7rem;
+}
+
+.gridContainer {
+    width: fit-content;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3,32rem);
+    grid-auto-rows: 32rem;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    position: relative;
+    top: 6rem;
+}
+.gridElements {
+    border: solid;
+    transition: all 0.2s ease-in-out;
+    background-color: white;
+    width: 32rem;
+    height: 32rem;
+    z-index: 1;
+}
+#clicked {
+    grid-column: span 2;
+    grid-row: span 2;
+    width: 65rem;
+    height: 65rem;
+    z-index: 2;
+}
+#unclicked {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gridItem0 {
+    grid-column: span 3;
+    width: 98rem;
+}
+.gridItem1 {
+    background-color: yellow;
+}
+#selected {
+    z-index: 2;
+}
+#selected.gridItem1 {
+    transform: translateY(-33rem);
+    width: 98rem;
+}
+#selected.gridItem2 {
+    transform: translate(-33rem, -33rem);
+    width: 98rem;
+}
+#selected.gridItem3 {
+    transform: translate(-66rem, -33rem);
+    width: 98rem;
+}
+#selected.gridItem4 {
+    transform: translateY(-66rem);
+    width: 98rem;
+}
+#selected.gridItem5 {
+    transform: translate(-33rem, -66rem);
+    width: 98rem;
+}
+#selected.gridItem6 {
+    transform: translate(-66rem, -66rem);
+    width: 98rem;
+}
