@@ -1,0 +1,40 @@
+.aboutMe {
+    background-color: #1e425b;
+    height: 100%;
+    width: 100%;
+    padding: calc(1.25rem * var(--multiplier));
+}
+.aboutMeSum {
+    position: relative;
+    right: calc(-1rem * var(--multiplier));
+}
+.aboutMe p {
+    position: relative;
+    right: calc(-1rem * var(--multiplier));
+    margin-bottom: 0.375rem;
+}
+.headshot {
+    width: calc(14rem * var(--multiplier));
+    height: calc(14rem * var(--multiplier));
+    border-radius: 50%;
+    position: relative;
+    right: calc(-15rem * var(--multiplier));
+    top: calc(1.5rem * var(--multiplier))
+}
+.aboutMeSelected .headshot {
+    width: calc(22rem * var(--multiplier));
+    height: calc(22rem * var(--multiplier));
+    right: calc(-38rem * var(--multiplier));
+    top: calc(-2rem * var(--multiplier))
+}
+.aboutMeSelected .aboutMeSum {
+    top: calc(-20.5rem * var(--multiplier));
+    right: calc(-1rem * var(--multiplier));
+    width: calc(35rem * var(--multiplier));
+}
+.bio {
+    position: relative;
+    top: calc(-20rem * var(--multiplier));
+    width: calc(60rem * var(--multiplier));
+    right: calc(-1rem * var(--multiplier));
+}

@@ -1,0 +1,52 @@
+.projects {
+    background-color: #1e425b;
+    height: 100%;
+    width: 100%;
+    padding: calc(1.25rem * var(--multiplier));
+}
+.notselected:hover.projects {
+    transform: scale(1.025, 1.01);
+    transition: all 0.1s ease-in-out;
+}
+.thriftr {
+    margin: calc(3rem * var(--multiplier)) auto;
+}
+.projects p {
+    margin: 0 calc(1rem * var(--multiplier)) calc(1.25rem * var(--multiplier)) calc(1rem * var(--multiplier));
+    text-align: center;
+}
+.thriftrImg {
+    width: calc(20rem * var(--multiplier));
+    height: calc(40rem * var(--multiplier));
+    transition: all 0.1s ease-in-out;
+}
+.thriftrImg.notSelected {
+    position: relative;
+    left: calc(5rem * var(--multiplier));
+}
+.thriftrImg:hover {
+    transform: scale(1.05);
+}
+.austinmoorman {
+    margin: calc(5rem * var(--multiplier)) 0;
+}
+.projects h4, .projects h5{
+    text-align: center;
+}
+.projectsSelected p {
+    text-align: left;
+}
+.projectsSelected .thriftr{
+    display: flex;
+    justify-content: space-between;
+}
+.githubLogo {
+    height: calc(4rem * var(--multiplier));
+    width: calc(14rem * var(--multiplier));
+    padding: calc(0.25rem * var(--multiplier)) 0;
+    background-color: #3aafa9;
+    fill: #feffff;
+    border-radius: calc(2.5rem * var(--multiplier));
+    position: relative;
+    left: calc(2rem * var(--multiplier));
+}

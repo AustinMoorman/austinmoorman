@@ -1,0 +1,24 @@
+h3 {
+    font-size: calc(3.5rem * var(--multiplier));
+    background-color: #3aafa9;
+    width: fit-content;
+    padding: calc(.25rem * var(--multiplier)) calc(2rem * var(--multiplier));
+    border-radius: calc(2rem * var(--multiplier));
+}
+h4 {
+    font-size: calc(2.5rem * var(--multiplier));
+    margin-bottom: 0.25rem;
+}
+h5 {
+    font-size: calc(1.8rem * var(--multiplier));
+    margin-bottom: 0.25rem;
+}
+p {
+    font-size: calc(1.75rem * var(--multiplier));
+    line-height: calc(2.25rem * var(--multiplier));;
+}
+.notselected:hover {
+    transform: scale(1.025);
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+}

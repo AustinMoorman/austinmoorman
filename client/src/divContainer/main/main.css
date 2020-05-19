@@ -1,0 +1,19 @@
+.main {
+    background-image: url(./background.jpg);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mainContent {
+    width: fit-content;
+    height: fit-content
+}
+.mainContent h2 {
+    font-size: 6rem;
+}
+.mainContent h3 {
+    text-align: center;
+    font-size: 2rem
+}

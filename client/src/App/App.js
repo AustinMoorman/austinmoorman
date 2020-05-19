@@ -1,16 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import DivContainer from '../divContainer/divContainer';
+import { ReactComponent as Hamburger } from '../icons/hamburger.svg'
 
 function App() {
 
-  const [pageVars, setPageVars] = useState({})
+  const [pageVars, setPageVars] = useState(null)
   const [error, setError] = useState(null)
-  const [divOrder, setDivOrder] = useState(['Main', 'AboutMe', 'Projects', 'Skills', 'History', 'Contact', 'Blog'])
+  const [divOrder, setDivOrder] = useState(['Main', 'AboutMe', 'Projects', 'Skills', 'Map', 'Contact', 'Blog'])
   const [divs, setDivs] = useState([])
   const [divID, setDivID] = useState(['notSelected', 'notSelected', 'notSelected', 'notSelected', 'notSelected', 'notSelected', 'notSelected'])
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [orientation, setOrientation] = useState(window.orientation)
+
+  const changeOrientation = () => {
+    setOrientation(window.orientation)
+  }
 
   useEffect(() => {
+    window.addEventListener('orientationchange', changeOrientation)
     fetch(`${process.env.REACT_APP_EXPRESS_URL}/get-data`)
       .then(res => {
         if (res.status !== 200) {
@@ -31,7 +39,7 @@ function App() {
       divOrder.map((element, index) => {
         return (
           <div className={`gridElements gridItem${(index).toString()}`} id={divID[index]} onClick={divIsClicked.bind(this, index)}>
-            <DivContainer catagory={element} status={divID[index]} />
+            <DivContainer catagory={element} status={divID[index]} pageVars={pageVars} />
           </div>
         )
       })
@@ -39,15 +47,11 @@ function App() {
   }, [pageVars, divID])
 
   const divSelected = event => {
+    setMenuOpen(false)
     let index = event.target.name
-    let selection = ['notSelected', 'notSelected', 'notSelected', 'notSelected', 'notSelected', 'notSelected', 'notSelected']
-    if (divID[index] == 'selected') {
-      setDivID(selection)
-    } else {
-      selection[index] = 'selected'
-      setDivID(selection)
-      window.scrollTo({top: 0, behavior: "smooth"})
-    }
+    let current = divID
+      current[index] = 'clicked'
+      setDivID([current[0], current[1], current[2], current[3], current[4], current[5], current[6]])
   }
 
   const divIsClicked = index => {
@@ -55,7 +59,7 @@ function App() {
     const selectedIndex = current.findIndex(element => {
       return element == 'selected'
     })
-    if(selectedIndex != -1 && index != selectedIndex){
+    if (selectedIndex != -1 && index != selectedIndex) {
       current[selectedIndex] = 'notSelected'
     }
     if (current[index] !== 'selected' && index > 0) {
@@ -74,17 +78,10 @@ function App() {
     }
 
   }
-
-
-
-  if (error) {
-    return <div><h4>{error}</h4></div>
-  }
-  return (
-    <div className="App">
-      <div className="head">
-        <h1>austin moorman</h1>
-        <div className="nav">
+  const menu = () => {
+    if (menuOpen) {
+      return (
+        <div className="navHidden">
           <a onClick={divSelected} name={1} className="navA">about me</a>
           <a onClick={divSelected} name={2} className="navA">projects</a>
           <a onClick={divSelected} name={3} className="navA">skills</a>
@@ -92,15 +89,71 @@ function App() {
           <a onClick={divSelected} name={5} className="navA">contact</a>
           <a onClick={divSelected} name={6} className="navA">blog</a>
         </div>
+
+      )
+    } else {
+      return <div></div>
+    }
+  }
+  const openMenu = () => {
+    if (menuOpen) {
+      setMenuOpen(false)
+    } else {
+      setMenuOpen(true)
+    }
+  }
+  const nav = (width) => {
+
+    if (orientation !== 0 || window.innerWidth > 450) {
+      return (
+        <div className="nav">
+          <a onClick={divSelected} name={1} className="navA" href="#aboutMe">about me</a>
+          <a onClick={divSelected} name={2} className="navA" href="#projects">projects</a>
+          <a onClick={divSelected} name={3} className="navA">skills</a>
+          <a onClick={divSelected} name={4} className="navA">history</a>
+          <a onClick={divSelected} name={5} className="navA">contact</a>
+          <a onClick={divSelected} name={6} className="navA">blog</a>
+        </div>
+      )
+
+    } else {
+      return (
+        <div className="hamburgerNav">
+          <Hamburger className="hamburger" onClick={openMenu} />
+          <div className="hamburgerPlaceholder"></div>
+          {menu()}
+        </div>
+
+      )
+
+    }
+  }
+
+
+
+  if (error) {
+    return <div><h4>{error}</h4></div>
+  } if (pageVars) {
+    return (
+      <div className="App">
+        <div className="head">
+          <h1>{pageVars.home.name}</h1>
+          {nav(window.innerWidth)}
+        </div>
+        <div className="gridContainer">
+          {divs}
+        </div>
+
+
+
       </div>
-      <div className="gridContainer">
-        {divs}
-      </div>
+    );
+  } else {
+    return (
+      <div>loading</div>
+    )
+  }
 
-
-
-    </div>
-  );
 }
 
 export default App;
