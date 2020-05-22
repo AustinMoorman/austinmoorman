@@ -1,19 +1,35 @@
 .main {
-    background-image: url(./background.jpg);
+    background-color: #1e425b;
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 .mainContent {
-    width: fit-content;
-    height: fit-content
+    flex-grow: 1;
+    display: flex;
+    justify-items: center;
+    align-items: center;
 }
 .mainContent h2 {
     font-size: 6rem;
+    text-align: center;
 }
 .mainContent h3 {
     text-align: center;
     font-size: 2rem
+}
+.download {
+    background-color: #3aafa9;
+    padding: calc(.25rem * var(--multiplier)) calc(1rem * var(--multiplier));
+    border-radius: calc(2rem * var(--multiplier));
+    font-size: calc(1.5rem * var(--multiplier));;
+    display: table;
+    margin: calc(1rem * var(--multiplier));
+    margin-left: auto;
+    width: fit-content;
+    text-decoration: none;
+    position: relative;
 }

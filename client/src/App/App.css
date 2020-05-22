@@ -1,3 +1,25 @@
+#logo h1{
+    margin: .5rem 0 1rem 2rem;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 700;
+    font-size: 400px;
+    position: relative;
+    right: 20px;
+
+
+}
+#logo {
+    margin: 25rem auto;
+    width: fit-content;
+    border: #feffff solid 3rem;
+    border-radius: 5rem;
+    height: 750px;
+    width:  750px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
 .App {
     width: 100%;
     background-color: #3aafa9;
@@ -10,8 +32,8 @@
     position: fixed;
     width: 100%;
     z-index: 4;
-    background-image: linear-gradient(rgba(58, 175, 169, 1), rgba(58, 175, 169, 0));
     max-height: calc(40px + 2.5rem);
+    height: 5rem;
 }
 
 .head h1 {
@@ -32,6 +54,8 @@
     font-family: 'Prompt', sans-serif;
     font-weight: 500;
     font-size: 1.5rem;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .navA:hover {
@@ -41,9 +65,11 @@
 .navHidden {
     display: flex;
     flex-direction: column;
-    background-color: #2b7a78;
+    background-color: rgba(30, 66, 91, .5);
     animation-duration: .2s;
     animation-name: slidein;
+    position: relative;
+    top: 1rem;
 }
 
 @keyframes slidein {
@@ -81,7 +107,12 @@
     height: 40px;
     width: 40px;
 }
-
+.linkAnchor {
+    position: relative;
+    top: -8rem;
+    color: transparent;
+    background-color: transparent;
+}
 
 
 .gridContainer {
@@ -94,6 +125,7 @@
     row-gap: 1rem;
     position: relative;
     top: 5rem;
+    grid-auto-flow: dense;
 }
 
 .gridElements {
@@ -119,16 +151,28 @@
     grid-row: span 2;
 }
 
-.gridItem0 {
+.gridItemmain {
     grid-column: span 3;
     width: 98rem;
 }
-.gridItem2{
+#clicked.gridItemskills {
+    grid-row: span 1;
+    height: 32rem;
+}
+.gridItemmaps {
+    grid-column: span 2;
+    width: 65rem;
+}
+.gridItemcontact {
+    grid-column: span 2;
+    width: 65rem;
+}
+.gridItemprojects{
     grid-column: span 1;
     grid-row: span 3;
     height: 98rem;
 }
-#clicked.gridItem2 {
+#clicked.gridItemprojects {
     grid-row: span 3;
     height: 98rem;
 }
@@ -136,9 +180,15 @@
 
 
 @media screen and (max-width: 450px) {
+    .head {
+        height: 60px;
+    }
     .head h1 {
         font-size: 5rem;
         margin: auto 0 auto 2rem;
+    }
+    .linkAnchor {
+        top: -60px;
     }
 
     .gridContainer {
@@ -158,16 +208,26 @@
     }
 
 
-    .gridItem0 {
+    .gridItemmain {
         grid-column: span 2;
         width: 97rem;
     }
-    .gridItem2{
+    #clicked.gridItemskills {
+        height: 48rem;
+    }
+    .gridItemmaps {
+        width: 97rem;
+    }
+    .gridItemcontact {
+        width: 97rem;
+    }
+    .gridItemprojects {
         height: 146rem;
     }
-    #clicked.gridItem2 {
+    #clicked.gridItemprojects {
         height: 146rem;
     }
+
 }
 @media screen and (min-width: 1800px) {
 
@@ -187,14 +247,23 @@
     }
 
 
-    .gridItem0 {
+    .gridItemmain {
         grid-column: span 4;
         width: 99rem;
     }
-    .gridItem2{
+    #clicked.gridItemskills {
+        height: 24rem;
+    }
+    .gridItemmaps {
+        width: 49rem;
+    }
+    .gridItemcontact {
+        width: 49rem;
+    }
+    .gridItemprojects{
         height: 74rem;
     }
-    #clicked.gridItem2 {
+    #clicked.gridItemprojects {
         height: 74rem;
     }
 }

@@ -4,6 +4,8 @@ const app = express();
 const PORT = process.env.PORT || 3005;
 require('dotenv').config();
 
+const emailRouter = require('./routers/email')
+
 
 
 // connect to DB
@@ -11,6 +13,7 @@ const mongoose = require('mongoose');
 mongoose.connect(process.env.REACT_APP_MONGO_URL,{useUnifiedTopology: true, useNewUrlParser: true});
 
 const PageVar = require('./models/pageVar')
+const CheckIn = require('./models/checkIn')
 
 
 //middleware
@@ -33,6 +36,19 @@ app.get('/get-data',(req,res,next) => {
         }
     })
 })
+
+app.post('/check-in',(req,res,next)=> {
+    console.log(req.body)
+    CheckIn(req.body).save((err,response) => {
+        if(err){
+            return next(err)
+        }
+        res.sendStatus(201)
+    })
+
+})
+
+app.use('/email',emailRouter)
 
 
 app.listen(PORT, () => {

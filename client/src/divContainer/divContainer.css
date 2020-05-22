@@ -7,18 +7,52 @@ h3 {
 }
 h4 {
     font-size: calc(2.5rem * var(--multiplier));
-    margin-bottom: 0.25rem;
+    margin-bottom: calc(.25rem * var(--multiplier));
 }
 h5 {
     font-size: calc(1.8rem * var(--multiplier));
-    margin-bottom: 0.25rem;
+    margin-bottom: calc(.25rem * var(--multiplier));
 }
 p {
     font-size: calc(1.75rem * var(--multiplier));
     line-height: calc(2.25rem * var(--multiplier));;
+}
+a {
+    font-size: calc(2.25rem * var(--multiplier));
+    cursor: pointer;
+}
+a:hover {
+    cursor: pointer;
 }
 .notselected:hover {
     transform: scale(1.025);
     transition: all 0.1s ease-in-out;
     cursor: pointer;
 }
+li {
+    font-size: calc(1.75rem * var(--multiplier));
+    list-style: inside;
+}
+input[type=text],input[type=email] {
+    font-size: calc(1.75rem * var(--multiplier));
+    background-color: transparent;
+    border: none;
+    border-bottom: #feffff solid calc(0.1rem * var(--multiplier));
+    height: calc(3rem * var(--multiplier));
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+textarea {
+    font-size: calc(1.75rem * var(--multiplier));
+    color: black;
+    background-color: #feffff;
+    border: none;
+    border-bottom: #feffff solid calc(0.1rem * var(--multiplier));
+    border-radius: calc(0.5rem * var(--multiplier));
+    -webkit-appearance: none;
+    padding: calc(0.75rem * var(--multiplier));
+}
+input:focus {
+    outline: none;
+}
+

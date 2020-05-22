@@ -1,0 +1,32 @@
+.map { 
+    background-color: #1e425b;
+}
+
+.findLocation {
+    position: relative;
+    left: calc(43rem * var(--multiplier));
+    top: calc(-29rem * var(--multiplier));
+    width: calc(21rem * var(--multiplier));
+}
+.findLocation h3 {
+    text-align: right;
+    margin: 0 0 calc(1.75rem * var(--multiplier)) auto;
+}
+.findLocation h4 {
+    font-size: calc(1.75rem * var(--multiplier));
+    margin-bottom: calc(1.75rem * var(--multiplier));
+    text-align: center;
+}
+.findLocation input[type=text] {
+    width: calc(18rem * var(--multiplier));
+    margin-left: calc(1.5rem * var(--multiplier));
+    text-align: center;
+}
+.findLocation a {
+    background-color: #3aafa9;
+    padding: calc(.25rem * var(--multiplier)) calc(1rem * var(--multiplier));
+    border-radius: calc(2rem * var(--multiplier));
+    display: table;
+    margin: calc(2rem * var(--multiplier)) auto;
+    width: fit-content;
+}

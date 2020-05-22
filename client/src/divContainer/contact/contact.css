@@ -1,0 +1,65 @@
+.contact {
+    background-color: #1e425b;
+    height: 100%;
+    width: 100%;
+    padding: calc(1.25rem * var(--multiplier));
+}
+.contact input {
+    width: calc(22rem * var(--multiplier));
+    font-size: calc(1.5rem * var(--multiplier));
+}
+.contact textarea {
+    resize: none;
+    margin-left: calc(1rem * var(--multiplier));
+    width: 100%;
+    height: calc(20rem * var(--multiplier));
+}
+.emailCreator {
+    display: flex;
+}
+.contactInfo {
+    margin-top: calc(2rem * var(--multiplier));
+}
+.contact a {
+    background-color: #3aafa9;
+    padding: calc(.25rem * var(--multiplier)) calc(1rem * var(--multiplier));
+    border-radius: calc(2rem * var(--multiplier));
+    position: relative;
+    top: calc(2rem * var(--multiplier));
+    display: table;
+    margin: 0 auto;
+    width: fit-content;
+}
+.contact .linkAnchor {
+    position: relative;
+    top: -8rem;
+    color: transparent;
+    background-color: transparent;
+}
+.contactErrorMessage {
+    position: relative;
+    top: calc(3rem * var(--multiplier));
+}
+.emailBody {
+    position: relative;
+    top: calc(-3rem * var(--multiplier))
+}
+.contactLinks {
+    display: flex;
+    align-items: center;
+    margin-left: calc(2rem * var(--multiplier));
+    margin-bottom: calc(1rem * var(--multiplier));
+}
+.contactLinks a {
+    font-size: calc(1.25rem * var(--multiplier));
+    position: static;
+    background-color: transparent;
+    text-decoration: none;
+    width: fit-content;
+    margin: 0 calc(1rem * var(--multiplier)) 0 0
+}
+.phoneIcon, .emailIcon {
+    height: calc(3rem * var(--multiplier));
+    width: calc(3rem * var(--multiplier));
+    fill: #feffff;
+}

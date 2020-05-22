@@ -7,6 +7,7 @@ function AboutMe(props) {
             case "notSelected":
                 return (
                     <div className="aboutMe notselected" id="aboutMe">
+                        <a id="aboutMeA" className="linkAnchor"></a>
                         <h3>About me</h3>
                         <img src={require('./headshot.jpg')} className="headshot" />
                         <div className="aboutMeSum">
@@ -22,6 +23,7 @@ function AboutMe(props) {
             case "unclicked":
                 return (
                     <div className="aboutMe aboutMeSelected selected" id="aboutMe">
+                        <a id="aboutMeA" className="linkAnchor"></a>
                         <h3>About me</h3>
                         <img src={require('./headshot.jpg')} className="headshot" />
                         <div className="aboutMeSum">
@@ -34,7 +36,7 @@ function AboutMe(props) {
                         </div>
                         <div className="bio">
                             <h4>Bio</h4>
-                            <p>{props.pageVars.aboutMe.bio} I am an Iowa native that has lived in Des Moines for the past 5 years. I'm always excited to create something new from web development and beyond. I like to stay busy!</p>
+                            <p>{props.pageVars.aboutMe.bio}</p>
                             <h4>History</h4>
                             <p>{props.pageVars.aboutMe.history}</p>
                         </div>
@@ -56,4 +58,4 @@ function AboutMe(props) {
     }
 
 }
-export default AboutMe
+export default AboutMe;
